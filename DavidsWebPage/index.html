@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConnectFour</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <!--<link rel="preconnect" href="https://fonts.googleapis.com">-->
     <!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
     <!-- css datei kann auch hier oben als <link rel.... eingebunden werden -->
@@ -15,26 +16,23 @@
         body {
             font-family: 'Lato', sans-serif;
             background-color: #f3f5f6;
-            padding-left: 24px;
-            padding-right: 24px;
+            padding-left: 16px;
+            padding-right: 16px;
             margin: 0;
-        }
-        
-        .header-image {
-            width: 100%;
-            height: 400px;
-            /*beschneidet das bild sodass es zur angegeben höhe passt und dennoch nicht verzeht wird*/
-            object-fit: cover;
-            /* gibt an, welcher Teil vom Bild unten und oben abgeschnitten werden soll*/
-            object-position: 80% 20%;
-            display: block;
         }
         
         .headline {
             color: #831D17;
-            font-size: 36px;
+            font-size: 30px;
             font-weight: bold;
             text-align: center;
+        }
+        
+        .text-highleight {
+            color: #484846;
+            font-size: 26px;
+            /*underline*/
+            text-decoration: underline;
         }
         
         .game-container {
@@ -55,6 +53,7 @@
         .button-container {
             display: flex;
             justify-content: right;
+            margin-left: 8px;
             width: 30%;
         }
         
@@ -86,6 +85,7 @@
         .playerturntext-container {
             display: flex;
             justify-content: left;
+            margin-left: 16px;
             width: 30%;
             /*content wide shall be twice as wide as the button container*/
         }
@@ -151,13 +151,6 @@
         }
         
         a:hover {
-            text-decoration: underline;
-        }
-        
-        .text-highleight {
-            color: #484846;
-            font-size: 30px;
-            /*underline*/
             text-decoration: underline;
         }
         
@@ -253,8 +246,14 @@
             background-color: rgba(255, 255, 255, 0.05);
         }
         
+        .gapmarker:active {
+            /*transparent*/
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
         .checkbox {
             margin-right: 8px;
+            accent-color: blue;
         }
         
         .checkbox-label {

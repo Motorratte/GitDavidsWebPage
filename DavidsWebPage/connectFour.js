@@ -25,7 +25,7 @@ const p1Token = 1;
 const p2Token = 2;
 const highlightArrow = 3;
 const arrowRowOffset = 0.15;
-const activationLabelRowOffset = 0.1;
+const activationLabelRowOffset = 0.08;
 const arrowSizeFactor = 0.7;
 const tokenRowOffset = 0.01;
 const p1Color = "rgb(255, 255, 0)";
@@ -38,6 +38,8 @@ const gameEndFrequence = 300;
 const delayToNextMove = 260;
 const nKeyCountResetDelayTime = 2000;
 const aiDelayTime = 720;
+const initFinishTimeMoveAcceptanceDelay = 50;
+var initFinishTime;
 
 //originally I wrote comments in german, so some comments are still german here...
 var nKeyCount; //wird genutzt um die "neues spiel" tastatur timings zu steuern
@@ -113,6 +115,8 @@ async function initGame() {
     currentPlayerText = p1MoveText;
     refreshTextView();
     updateAi();
+    initFinishTime = new Date().getTime();
+
 }
 
 function clearTimeouts() {
@@ -443,7 +447,8 @@ function onReExecuteMove() {
 
 function onMoveExecutionRequest(move, activateAnimationMode) {
     date = new Date();
-    if (lastMoveExecutionTime + delayToNextMove >= date.getTime() || p1InAnimationMode && p2InAnimationMode) {
+    let time = date.getTime();
+    if (lastMoveExecutionTime + delayToNextMove >= time || p1InAnimationMode && p2InAnimationMode || time - initFinishTime < initFinishTimeMoveAcceptanceDelay) {
         return; //Doppelklick auf die selbe Spalte wird ignoriert barrierefreiheit, zitternde hände
     }
     if (gameIsOver) {
