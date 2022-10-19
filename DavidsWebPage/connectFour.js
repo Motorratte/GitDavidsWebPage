@@ -101,14 +101,15 @@ async function initGame() {
     lastMoveExecutionTime = 0;
     resetNKeyCount();
     initBoard();
-    initBoardView();
-    initMoveHistory();
-    refreshView();
     initCheckBoxValues();
+    refreshTextView();
     if (kerasAIModel === undefined) {
         kerasAIModel = await loadKerasModel();
         predictMoveEvaluations();
     }
+    initBoardView();
+    initMoveHistory();
+    refreshView();
     currentPlayerText = p1MoveText;
     refreshTextView();
     updateAi();
@@ -420,6 +421,8 @@ function onUndoMoveRequest() {
 }
 
 function onMouseClick(event) {
+    if (calculateRowOfPosition(event) > boardHeight)
+        return;
     onMoveExecutionRequest(calculateGapOfPosition(event), true);
 }
 
@@ -603,15 +606,20 @@ function refreshAnimationPlayer(nextAnimationPosition, token) {
 function calculateGapOfPosition(event) { //rechnet die Mausposition in eine Spalte um
     //refreshBoardParameters();
     let relativeX = event.clientX - boardPositionX;
-    let relativeY = event.clientY - boardPositionY;
     if (relativeX < 0)
         relativeX = 0;
-    if (relativeY < 0)
-        relativeY = 0;
     let clickedGap = Math.floor(relativeX / singleFieldWidth);
     if (clickedGap >= boardWide)
         clickedGap = boardWide - 1;
     return clickedGap;
+}
+
+function calculateRowOfPosition(event) {
+    let relativeY = event.clientY - boardPositionY;
+    if (relativeY < 0)
+        relativeY = 0;
+    let clickedRow = Math.floor(relativeY / singleFieldHeight);
+    return clickedRow;
 }
 
 function refreshView() {
