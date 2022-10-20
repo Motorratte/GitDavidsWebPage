@@ -16,8 +16,8 @@
         body {
             font-family: 'Lato', sans-serif;
             background-color: #f3f5f6;
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: 12px;
+            padding-right: 12px;
             margin: 0;
         }
         
@@ -91,47 +91,116 @@
         }
         
         @media screen and (max-width: 16cm) {
-            .board {
-                width: 90%;
+            .headline {
+                font-size: 21px;
+            }
+            .text-highleight {
+                font-size: 19px;
             }
             .checkbox-container-container {
                 width: 36%;
+            }
+            @media screen and (min-height: 12cm) {
+                .board {
+                    width: 90%;
+                }
             }
         }
         
         @media screen and (max-width: 24cm) and (min-width: 16cm) {
-            .board {
-                width: 75%;
+            .headline {
+                font-size: 24px;
+            }
+            .text-highleight {
+                font-size: 20px;
             }
             .checkbox-container-container {
                 width: 36%;
+            }
+            @media screen and (min-height: 14cm) {
+                .board {
+                    width: 75%;
+                }
             }
         }
         
         @media screen and (max-width: 32cm) and (min-width: 24cm) {
-            .board {
-                width: 60%;
+            body {
+                padding-left: 16px;
+                padding-right: 16px;
             }
             .checkbox-container-container {
                 width: 36%;
             }
+            @media screen and (min-height: 16cm) {
+                .board {
+                    width: 65%;
+                }
+            }
+            @media screen and (max-height: 16cm) {
+                .board {
+                    width: 50%;
+                }
+            }
         }
         
         @media screen and (max-width: 48cm) and (min-width: 32cm) {
-            .board {
-                width: 50%;
+            body {
+                padding-left: 24px;
+                padding-right: 24px;
             }
             .checkbox-container-container {
-                width: 34%;
+                width: 30%;
+            }
+            @media screen and (min-height: 20cm) {
+                .board {
+                    width: 50%;
+                }
             }
         }
         
-        @media screen and (min-width: 64cm) {
-            .board {
-                width: 30%;
+        @media screen and (max-width: 64cm) and (min-width: 48cm) {
+            body {
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+            .checkbox-container-container {
+                width: 26%;
+            }
+            @media screen and (min-height: 20cm) {
+                .board {
+                    width: 40%;
+                }
+            }
+        }
+        
+        @media screen and (max-width: 78cm) and (min-width: 64cm) {
+            body {
+                padding-left: 32px;
+                padding-right: 32px;
             }
             .checkbox-container-container {
                 width: 20%;
+            }
+            @media screen and (min-height: 20cm) {
+                .board {
+                    width: 33%;
+                }
+            }
+        }
+        
+        @media screen and (min-width: 78cm) {
+            body {
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+            .checkbox-container-container {
+                width: 16%;
+            }
+            @media screen and (min-height: 20cm) {
+                .board {
+                    width: 25%;
+                }
             }
         }
         
@@ -245,10 +314,11 @@
             /*transparent*/
             background-color: rgba(255, 255, 255, 0.05);
         }
+        /*while the button is pressed*/
         
         .gapmarker:active {
             /*transparent*/
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.1);
         }
         
         .checkbox {
