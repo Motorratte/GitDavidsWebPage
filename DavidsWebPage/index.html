@@ -348,7 +348,12 @@
         
         .noScriptMessage {
             color: white;
+        }
+        
+        .loadingMessage {
+            color: white;
             font-size: 24px;
+            visibility: hidden;
         }
     </style>
     <script src="tf.min.js"></script>
@@ -386,7 +391,7 @@
             <noscript>
                 <h1 class="noScriptMessage">Sorry, this game requires JavaScript to run.</h1>
             </noscript>
-            <h1 class="noScriptMessage">Model and TensorFlow.js is loading... this computationally demanding task can take up to 40 seconds if your device is slow. You can use this page offline once loaded.</h1>
+            <h1 class="loadingMessage" , id="loadingMessage">Model and TensorFlow.js is loading... this computationally demanding task can take up to 40 seconds if your device is slow. You can use this page offline once loaded.</h1>
         </div>
     </div>
     <div class="legal-container ">

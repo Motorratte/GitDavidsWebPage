@@ -106,6 +106,7 @@ async function initGame() {
     initCheckBoxValues();
     refreshTextView();
     if (kerasAIModel === undefined) {
+        document.getElementById("loadingMessage").style.visibility = "visible";
         kerasAIModel = await loadKerasModel();
         predictMoveEvaluations();
     }
