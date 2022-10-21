@@ -106,7 +106,7 @@ async function initGame() {
     initCheckBoxValues();
     refreshTextView();
     if (kerasAIModel === undefined) {
-        document.getElementById("loadingMessage").style.visibility = "visible";
+        document.getElementById("board").innerHTML = "<h1 class=loadingMessage> Model and TensorFlow.js is loading... this computationally demanding task can take up to 40 seconds if your device is slow. You can use this page offline once loaded.</h1>";
         kerasAIModel = await loadKerasModel();
         predictMoveEvaluations();
     }
