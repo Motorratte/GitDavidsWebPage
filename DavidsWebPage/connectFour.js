@@ -321,8 +321,12 @@ function generateBoardElements() {
     var boardDOM = document.getElementById("board");
     //get number of children
     var numberOfChildren = boardDOM.childElementCount;
-    if (numberOfChildren > 1)
+    if (numberOfChildren > 2)
         return;
+    //clear all children
+    while (boardDOM.firstChild) {
+        boardDOM.removeChild(boardDOM.firstChild);
+    }
     //add pictures to board
     for (let i = 0; i < numberOfFields; i++) {
         //boardDOM.innerHTML += "<img id=" + i + "_chipYellow src='img/connect_four_chip_cyan.png'></img>";
