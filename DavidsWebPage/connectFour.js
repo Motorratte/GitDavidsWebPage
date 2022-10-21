@@ -285,7 +285,7 @@ function updateActivationLabelValues(values, player) {
         if (isLegalMove(i)) {
             activationLabel.innerHTML = Math.round(values[i] * 10) / 10;
         } else {
-            activationLabel.innerHTML = "NaN";
+            activationLabel.innerHTML = "-";
         }
         if (player === 1) {
             activationLabel.style.color = p1Color;
