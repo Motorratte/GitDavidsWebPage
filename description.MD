@@ -4,4 +4,4 @@ This project is a Four Wins programme that uses a reinforcement learning bot fro
 
 The website is powered by a Node.js server. Tensorflow.js is used to execute the neural network in the frontend.
 
-You can find my Website under: www.deepengine.org
+You can find my website under: www.deepengine.org
